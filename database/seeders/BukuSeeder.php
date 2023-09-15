@@ -21,6 +21,6 @@ class BukuSeeder extends Seeder
         // $buku->name ='Belajar Laravel';
         // $buku->category ='Pemrograman';
         // $buku->save();
-        Buku::factory(13)->create();
+        Buku::factory(2)->create();
     }
 }
