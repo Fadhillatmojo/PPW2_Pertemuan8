@@ -7,7 +7,7 @@
 			<div>Judul <input type="text" name="judul"></div>
 			<div>Penulis <input type="text" name="penulis"></div>
 			<div>Harga <input type="text" name="harga"></div>
-			<div>Tgl.terbit <input type="text" name="tgl_terbit"></div>
+			<div>Tgl.terbit <input type="date" name="tgl_terbit"></div>
 			<div>
 				<button type="submit">Simpan</button>
 				<a href="/buku">Batal</a>

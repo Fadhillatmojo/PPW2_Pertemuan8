@@ -7,7 +7,7 @@
 		<div>Harga <input type="text" name="harga" value="{{ $buku->harga }}"></div>
 		<div>Tgl.Terbit <input type="date" name="tgl_terbit" value="{{ $buku->tgl_terbit }}"></div>
 		<div>
-			<button type="submit">Update</button>
+			<button type="submit" onClick="return alert('Berhasil di update')">Update</button>
 			<a href="/buku">Batal</a>
 		</div>		
 	</form>
