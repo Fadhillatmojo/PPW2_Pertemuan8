@@ -3,6 +3,9 @@
 	@php
 					use Carbon\Carbon;
 	@endphp
+	<p align="right">
+		<a href="{{ route('buku.create') }}">Tambah buku</a>
+	</p>
 	<h3>
 		Data normal
 	</h3>
@@ -26,7 +29,20 @@
 			<td>{{ $buku->penulis }}</td>
 			<td>{{ "Rp ". number_format($buku->harga, 2, ',', '.') }}</td>
 			<td>{{ Carbon::parse($buku->tgl_terbit)->format('d/m/Y') }}</td>
-			<td><a href="#" id="edit">Edit</a> | <a href="#" id="delete">Delete</a></td>
+			<td>
+				<form action="{{ route('buku.destroy', $buku->id) }}" method="post">
+					@csrf
+					<button onClick="return confirm('yakin mau dihapus?')">
+						Hapus
+					</button>
+				</form>
+				<form action="{{ route('buku.update', $buku->id) }}" method="post">
+					@csrf
+					<button>
+						<a href="{{ route('buku.update',$buku->id) }}">Update</a>
+					</button>
+				</form>
+			</td>
 		</tr>
 		@endforeach
 	</tbody>
@@ -38,7 +54,6 @@
 
 	<thead>
 		<tr>
-		<th>no</th>
 		<th>id</th>
 		<th>Judul Buku</th>
 		<th>Penulis</th>
@@ -50,13 +65,25 @@
 <tbody>
 	@foreach ($data_buku_sort as $buku)
 	<tr>
-			<td>{{ $no++ }}</td>
 			<td>{{ $buku->id }}</td>
 			<td>{{ $buku->judul }}</td>
 			<td>{{ $buku->penulis }}</td>
 			<td>{{ "Rp ". number_format($buku->harga, 2, ',', '.') }}</td>
 			<td>{{ Carbon::parse($buku->tgl_terbit)->format('d/m/Y') }}</td>
-			<td><a href="#" id="edit">Edit</a> | <a href="#" id="delete">Delete</a></td>
+			<td>
+				<form action="{{ route('buku.destroy', $buku->id) }}" method="post">
+					@csrf
+					<button onClick="return confirm('yakin mau dihapus?')">
+						Hapus
+					</button>
+				</form>
+				<form action="{{ route('buku.update', $buku->id) }}" method="post">
+					@csrf
+					<button>
+						<a href="{{ route('buku.update',$buku->id) }}">Update</a>
+					</button>
+				</form>
+			</td>
 		</tr>
 		@endforeach
 	</tbody>

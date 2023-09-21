@@ -15,12 +15,10 @@ class BukuSeeder extends Seeder
     {
         // $buku =Buku::create([
         //     "judul"=> "John Doe",
-        //     ""
+        //     "penulis"=> "eko",
+        //     "harga"=> 120000,
+        //     "tgl_terbit"=>now()
         // ]);
-        // $buku = new Buku();
-        // $buku->name ='Belajar Laravel';
-        // $buku->category ='Pemrograman';
-        // $buku->save();
-        Buku::factory(2)->create();
+        Buku::factory(10)->create();
     }
 }
