@@ -53,4 +53,9 @@ class BukuController extends Controller
         $buku->save();
         return redirect('/buku');
     }
+
+    public function show($id){
+        $buku = Buku::find($id);
+        return view('buku.show', compact('buku'));
+    }
 }

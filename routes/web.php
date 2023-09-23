@@ -22,15 +22,22 @@ Route::get('/', function () {
 //     return view('anjay');
 // });
 
-Route::get('/buku', [BukuController::class, 'index']);
 // Route::get('/count', [DataCountController::class, 'index']);
+
+Route::get('/buku', [BukuController::class, 'index']);
+
 Route::get('/buku/create', [BukuController::class, 'create'])->name('buku.create');
 Route::post('/buku', [BukuController::class, 'store'])-> name('buku.store');
+
 Route::post('/buku/delete/{id}', [BukuController::class, 'destroy'])-> name('buku.destroy');
 
-// tugas
+// tugas update data rute 
 Route::get('/buku/update/{id}', [BukuController::class, 'update'])-> name('buku.update');
 Route::post('/buku/update/submit/{id}', [BukuController::class, 'updatedata'])-> name('buku.updatedata');
+
+// rute show data
+Route::get('/buku/show/{id}', [BukuController::class, 'show'])-> name('buku.show');
+
 
 
 
