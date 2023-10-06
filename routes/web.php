@@ -26,6 +26,8 @@ Route::get('/', function () {
 
 Route::get('/buku', [BukuController::class, 'index']);
 
+// create buku
+
 Route::get('/buku/create', [BukuController::class, 'create'])->name('buku.create');
 Route::post('/buku', [BukuController::class, 'store'])-> name('buku.store');
 

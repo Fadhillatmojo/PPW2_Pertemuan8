@@ -11,9 +11,9 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="stylesheet" href="style.css">
 	<style>
-	body{
-		font-family: 'Poppins', sans-serif !important;
-	}
+		body{
+			font-family: 'Poppins', sans-serif !important;
+		}
 	</style>
 </head>
 	<body class="p-5">
