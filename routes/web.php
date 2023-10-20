@@ -40,6 +40,9 @@ Route::post('/buku/update/submit/{id}', [BukuController::class, 'updatedata'])->
 // rute show data
 Route::get('/buku/show/{id}', [BukuController::class, 'show'])-> name('buku.show');
 
+// route search data
+Route::get('/buku/search', [BukuController::class,'search'])->name('buku.search');
+
 
 
 

@@ -2,6 +2,13 @@
 @section('body')
 	<div class="container card p-4 d-flex align-items-center">
 		<h4 style="font-weight: bold">Tambah buku</h4>
+		@if (count($errors)>0)
+		    <ul class="alert alert-danger p-2">
+				@foreach ($errors->all() as $error)
+				    <li style="list-style: none">{{ $error }}</li>
+				@endforeach
+		    </ul>
+		@endif
 		<form method="post" action="{{ route('buku.store') }}">
 		@csrf
 		<table>

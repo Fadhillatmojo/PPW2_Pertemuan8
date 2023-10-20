@@ -5,9 +5,13 @@
 	@endphp
 	<div class="container">
 		<div class="d-flex flex-row justify-content-between mb-3">
-			<h3>
-				Semua Data Buku
-			</h3>
+			@if (count($data_buku_cari))
+			    <div>Ditemukan <strong>{{ count($data_buku_cari) }}</strong> buah data, dengan kata kunci <strong>{{ $cari }}</strong></div>
+			    <a href="/buku">Kembali</a>
+			@else
+				<div class="alert alert-warning">Data dengan kata kunci <strong>{{ $cari }}</strong> tak ditemukan</div>
+				<a href="/buku">Kembali</a>
+			@endif
 			<form action="{{ route('buku.search') }}" method="GET">
 				@csrf
 				<input type="text" name="kata" class="form-control" placeholder="Cari ..." style="">
@@ -37,7 +41,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			@foreach ($data_buku as $buku)
+			@foreach ($data_buku_cari as $buku)
 			<tr>
 					<td class="text-center">{{ $loop->iteration }}</td>
 					<td>{{ $buku->judul }}</td>
